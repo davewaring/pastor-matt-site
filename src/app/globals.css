@@ -1,33 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAF8;
-  --foreground: #1C1917;
-  --primary: #1E3A5F;
-  --primary-light: #2D5A8E;
-  --primary-dark: #142740;
-  --accent: #B8860B;
-  --accent-light: #D4A843;
-  --warm-white: #FDF8F0;
-  --warm-gray: #78716C;
-  --warm-gray-light: #D6D3D1;
-  --warm-gray-lighter: #F5F5F4;
+  --background: #FFFFFF;
+  --foreground: #1C1C1C;
+  --dark: #1C1C1C;
+  --dark-deep: #111111;
+  --accent: #007CBA;
+  --accent-hover: #0FAEF0;
+  --muted: #A8A8A8;
+  --light-bg: #F8F8F8;
+  --border-light: rgba(255, 255, 255, 0.15);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
+  --color-dark: var(--dark);
+  --color-dark-deep: var(--dark-deep);
   --color-accent: var(--accent);
-  --color-accent-light: var(--accent-light);
-  --color-warm-white: var(--warm-white);
-  --color-warm-gray: var(--warm-gray);
-  --color-warm-gray-light: var(--warm-gray-light);
-  --color-warm-gray-lighter: var(--warm-gray-lighter);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-light-bg: var(--light-bg);
+  --color-border-light: var(--border-light);
+  --font-sans: var(--font-raleway);
+  --font-heading: var(--font-raleway);
+  --font-nav: var(--font-montserrat);
 }
 
 body {

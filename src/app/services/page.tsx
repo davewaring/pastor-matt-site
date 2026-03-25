@@ -10,59 +10,61 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="bg-primary px-6 py-16 text-center text-white">
-        <h1 className="text-4xl font-bold">What I Offer</h1>
-        <p className="mt-3 text-lg text-white/80">
+      <section className="bg-dark px-6 py-24 text-center text-white">
+        <h1 className="text-4xl font-light md:text-5xl">What I Offer</h1>
+        <p className="mt-4 text-lg text-white/50">
           Sunday pulpit supply for your congregation
         </p>
       </section>
 
       {/* Services */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-4xl">
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-3xl">
           {siteContent.services.map((service) => (
             <div
               key={service.name}
-              className="rounded-lg border border-warm-gray-light bg-white p-8 shadow-sm"
+              className="rounded-2xl border border-dark/10 bg-white p-10 shadow-sm"
             >
-              <h3 className="text-2xl font-bold text-primary">{service.name}</h3>
-              <p className="mt-3 text-lg text-warm-gray">{service.description}</p>
+              <h3 className="text-2xl font-light text-dark">{service.name}</h3>
+              <p className="mt-4 text-lg leading-relaxed text-muted">
+                {service.description}
+              </p>
               {service.rate && (
-                <div className="mt-4 text-2xl font-bold text-accent">
+                <div className="mt-6 text-3xl font-light text-accent">
                   {service.rate}
                 </div>
               )}
-              <ul className="mt-6 space-y-2">
+              <ul className="mt-8 space-y-3">
                 {service.details.map((detail, i) => (
-                  <li key={i} className="flex items-start gap-3 text-warm-gray">
-                    <span className="mt-0.5 text-accent">&#10003;</span>
+                  <li key={i} className="flex items-start gap-3 text-muted">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
                     <span>{detail}</span>
                   </li>
                 ))}
               </ul>
               <Link
                 href="/contact"
-                className="mt-8 inline-block rounded-lg bg-primary px-8 py-3 font-semibold text-white transition-colors hover:bg-primary-light"
+                className="mt-10 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 font-nav text-sm font-medium uppercase tracking-wider text-white transition-colors hover:bg-accent-hover"
               >
-                Invite Me to Speak
+                Invite Me to Speak <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Speaking style */}
-      <section className="bg-warm-gray-lighter px-6 py-16">
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading title="My Speaking Style" />
-          <p className="mt-8 text-center text-lg leading-relaxed text-warm-gray">
+      {/* Speaking style — dark */}
+      <section className="bg-dark px-6 py-24 text-white">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionHeading title="My Speaking Style" light />
+          <p className="mt-10 text-xl font-light leading-relaxed text-white/60">
             {siteContent.speakingStyle}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
             {siteContent.sermonTopics.map((topic) => (
               <span
                 key={topic}
-                className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
+                className="rounded-full border border-white/15 px-5 py-2 text-sm text-white/70"
               >
                 {topic}
               </span>
@@ -71,17 +73,17 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-3xl">
+      {/* FAQ — light */}
+      <section className="bg-light-bg px-6 py-24">
+        <div className="mx-auto max-w-2xl">
           <SectionHeading title="Frequently Asked Questions" />
-          <div className="mt-10 space-y-6">
+          <div className="mt-12 space-y-8">
             {siteContent.faq.map((item, i) => (
               <div key={i}>
-                <h3 className="text-lg font-semibold text-primary">
+                <h3 className="text-lg font-semibold text-dark">
                   {item.question}
                 </h3>
-                <p className="mt-2 leading-relaxed text-warm-gray">{item.answer}</p>
+                <p className="mt-2 leading-relaxed text-muted">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -89,16 +91,16 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary px-6 py-12 text-center text-white">
-        <h2 className="text-2xl font-bold">Ready to get started?</h2>
-        <p className="mt-2 text-white/80">
+      <section className="bg-dark-deep px-6 py-20 text-center text-white">
+        <h2 className="text-3xl font-light">Ready to get started?</h2>
+        <p className="mt-4 text-white/50">
           Send me an email and let&apos;s talk about your church&apos;s needs.
         </p>
         <Link
           href="/contact"
-          className="mt-4 inline-block rounded-lg bg-accent px-8 py-3 font-semibold text-white transition-colors hover:bg-accent-light"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 font-nav text-sm font-medium uppercase tracking-wider text-white transition-colors hover:bg-accent-hover"
         >
-          Get in Touch
+          Get in Touch <span aria-hidden="true">&rarr;</span>
         </Link>
       </section>
     </>

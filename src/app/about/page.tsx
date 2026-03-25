@@ -9,21 +9,23 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Page header */}
-      <section className="bg-primary px-6 py-16 text-center text-white">
-        <h1 className="text-4xl font-bold">About {siteContent.name}</h1>
-        <p className="mt-3 text-lg text-white/80">{siteContent.title}</p>
+      {/* Page header — dark */}
+      <section className="bg-dark px-6 py-24 text-center text-white">
+        <h1 className="text-4xl font-light md:text-5xl">
+          About {siteContent.name}
+        </h1>
+        <p className="mt-4 text-lg text-white/50">{siteContent.title}</p>
       </section>
 
-      {/* Bio */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-3xl">
-          {/* Photo placeholder — replace once headshot is added */}
-          <div className="mx-auto mb-10 flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-warm-gray-light text-warm-gray">
+      {/* Bio — white */}
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-2xl">
+          {/* Photo placeholder */}
+          <div className="mx-auto mb-14 flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-light-bg text-muted">
             <span className="text-sm">Photo coming soon</span>
           </div>
 
-          <div className="space-y-6 text-lg leading-relaxed text-warm-gray">
+          <div className="space-y-6 text-lg leading-relaxed text-muted">
             {siteContent.about.fullBio.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
@@ -31,25 +33,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="bg-warm-gray-lighter px-6 py-16">
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading title="My Preaching Philosophy" />
-          <p className="mt-8 text-center text-lg leading-relaxed text-warm-gray">
+      {/* Philosophy — dark */}
+      <section className="bg-dark px-6 py-24 text-white">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionHeading title="My Preaching Philosophy" light />
+          <p className="mt-10 text-xl font-light leading-relaxed text-white/70">
             {siteContent.about.philosophy}
           </p>
         </div>
       </section>
 
-      {/* Credentials */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-3xl">
+      {/* Credentials — light */}
+      <section className="bg-light-bg px-6 py-24">
+        <div className="mx-auto max-w-2xl">
           <SectionHeading title="Education & Credentials" />
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-10 space-y-4">
             {siteContent.about.credentials.map((cred, i) => (
-              <li key={i} className="flex items-start gap-3 text-lg text-warm-gray">
-                <span className="mt-1 text-accent">&#8226;</span>
-                <span>{cred}</span>
+              <li key={i} className="flex items-start gap-4 text-muted">
+                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                <span className="text-lg">{cred}</span>
               </li>
             ))}
           </ul>
@@ -57,13 +59,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary px-6 py-12 text-center text-white">
-        <h2 className="text-2xl font-bold">Interested in having me preach?</h2>
+      <section className="bg-dark-deep px-6 py-20 text-center text-white">
+        <h2 className="text-3xl font-light">Interested in having me preach?</h2>
         <Link
           href="/contact"
-          className="mt-4 inline-block rounded-lg bg-accent px-8 py-3 font-semibold text-white transition-colors hover:bg-accent-light"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 font-nav text-sm font-medium uppercase tracking-wider text-white transition-colors hover:bg-accent-hover"
         >
-          Get in Touch
+          Get in Touch <span aria-hidden="true">&rarr;</span>
         </Link>
       </section>
     </>

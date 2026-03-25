@@ -16,13 +16,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="bg-primary text-white">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          {siteContent.name}
-          <span className="ml-2 text-sm font-normal text-accent-light opacity-90">
-            {siteContent.title}
-          </span>
+    <header className="bg-dark text-white">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <Link href="/" className="text-lg font-semibold tracking-wide">
+          {siteContent.fullName}
         </Link>
 
         {/* Desktop nav */}
@@ -31,7 +28,7 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-white/90 transition-colors hover:text-accent-light"
+                className="font-nav text-xs font-medium uppercase tracking-widest text-white/80 transition-colors hover:text-accent"
               >
                 {link.label}
               </Link>
@@ -78,7 +75,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-2 text-sm font-medium text-white/90 transition-colors hover:text-accent-light"
+                  className="block py-3 font-nav text-sm uppercase tracking-widest text-white/80 transition-colors hover:text-accent"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
