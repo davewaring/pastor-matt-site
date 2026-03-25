@@ -32,15 +32,17 @@ export default function ContactPage() {
                     {siteContent.email}
                   </a>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-primary">Phone</h3>
-                  <a
-                    href={`tel:${siteContent.phone}`}
-                    className="text-accent hover:underline"
-                  >
-                    {siteContent.phone}
-                  </a>
-                </div>
+                {siteContent.phone && (
+                  <div>
+                    <h3 className="font-semibold text-primary">Phone</h3>
+                    <a
+                      href={`tel:${siteContent.phone}`}
+                      className="text-accent hover:underline"
+                    >
+                      {siteContent.phone}
+                    </a>
+                  </div>
+                )}
                 <div>
                   <h3 className="font-semibold text-primary">Location</h3>
                   <p className="text-warm-gray">{siteContent.location}</p>
@@ -50,9 +52,20 @@ export default function ContactPage() {
               <div className="mt-10 rounded-lg bg-warm-gray-lighter p-6">
                 <h3 className="font-semibold text-primary">Response Time</h3>
                 <p className="mt-2 text-sm text-warm-gray">
-                  I typically respond within 24-48 hours. For urgent scheduling
-                  needs, please call directly.
+                  I typically respond within a few days. For time-sensitive
+                  requests, please mention that in your message.
                 </p>
+              </div>
+
+              <div className="mt-6 rounded-lg bg-warm-gray-lighter p-6">
+                <h3 className="font-semibold text-primary">What to Include</h3>
+                <ul className="mt-2 space-y-1 text-sm text-warm-gray">
+                  <li>&#8226; Your church name and location</li>
+                  <li>&#8226; Preferred Sunday date(s)</li>
+                  <li>&#8226; Service time(s)</li>
+                  <li>&#8226; Any specific topics or texts you&apos;d like</li>
+                  <li>&#8226; Your church&apos;s denomination or tradition</li>
+                </ul>
               </div>
             </div>
 
@@ -93,7 +106,7 @@ export default function ContactPage() {
                     id="church"
                     name="church"
                     className="mt-1 block w-full rounded-lg border border-warm-gray-light px-4 py-2.5 text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                    placeholder="First Baptist Church"
+                    placeholder="Community Church"
                   />
                 </div>
                 <div>
@@ -109,7 +122,7 @@ export default function ContactPage() {
                     name="email"
                     required
                     className="mt-1 block w-full rounded-lg border border-warm-gray-light px-4 py-2.5 text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                    placeholder="pastor@firstbaptist.org"
+                    placeholder="pastor@communitychurch.org"
                   />
                 </div>
                 <div>
@@ -117,7 +130,7 @@ export default function ContactPage() {
                     htmlFor="date"
                     className="block text-sm font-medium text-foreground"
                   >
-                    Preferred Date(s)
+                    Preferred Sunday(s)
                   </label>
                   <input
                     type="text"

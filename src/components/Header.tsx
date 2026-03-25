@@ -7,8 +7,8 @@ import { siteContent } from "@/content/site-content";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services & Rates" },
-  { href: "/schedule", label: "Book Now" },
+  { href: "/services", label: "Services" },
+  { href: "/schedule", label: "Book a Sunday" },
   { href: "/contact", label: "Contact" },
 ];
 

@@ -24,12 +24,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services" className="hover:text-accent-light transition-colors">
-                  Services & Rates
+                  Services
                 </Link>
               </li>
               <li>
                 <Link href="/schedule" className="hover:text-accent-light transition-colors">
-                  Book Now
+                  Book a Sunday
                 </Link>
               </li>
               <li>
@@ -52,14 +52,16 @@ export default function Footer() {
                   {siteContent.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${siteContent.phone}`}
-                  className="hover:text-accent-light transition-colors"
-                >
-                  {siteContent.phone}
-                </a>
-              </li>
+              {siteContent.phone && (
+                <li>
+                  <a
+                    href={`tel:${siteContent.phone}`}
+                    className="hover:text-accent-light transition-colors"
+                  >
+                    {siteContent.phone}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

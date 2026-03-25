@@ -18,9 +18,9 @@ export default function AboutPage() {
       {/* Bio */}
       <section className="px-6 py-20">
         <div className="mx-auto max-w-3xl">
-          {/* Photo placeholder */}
-          <div className="mx-auto mb-10 flex h-64 w-64 items-center justify-center rounded-full bg-warm-gray-light text-warm-gray">
-            <span className="text-sm">Photo</span>
+          {/* Photo placeholder — replace once headshot is added */}
+          <div className="mx-auto mb-10 flex h-64 w-64 items-center justify-center overflow-hidden rounded-full bg-warm-gray-light text-warm-gray">
+            <span className="text-sm">Photo coming soon</span>
           </div>
 
           <div className="space-y-6 text-lg leading-relaxed text-warm-gray">
@@ -44,7 +44,7 @@ export default function AboutPage() {
       {/* Credentials */}
       <section className="px-6 py-16">
         <div className="mx-auto max-w-3xl">
-          <SectionHeading title="Background & Credentials" />
+          <SectionHeading title="Education & Credentials" />
           <ul className="mt-8 space-y-3">
             {siteContent.about.credentials.map((cred, i) => (
               <li key={i} className="flex items-start gap-3 text-lg text-warm-gray">
@@ -60,10 +60,10 @@ export default function AboutPage() {
       <section className="bg-primary px-6 py-12 text-center text-white">
         <h2 className="text-2xl font-bold">Interested in having me preach?</h2>
         <Link
-          href="/schedule"
+          href="/contact"
           className="mt-4 inline-block rounded-lg bg-accent px-8 py-3 font-semibold text-white transition-colors hover:bg-accent-light"
         >
-          Book a Sunday
+          Get in Touch
         </Link>
       </section>
     </>
